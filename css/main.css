@@ -1,0 +1,148 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #181818;
+    color: white;
+    overflow-x: hidden;
+}
+
+.howWorks {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.ticker {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+}
+
+.tickerWrapper {
+    display: flex;
+    width: 200%;
+}
+
+.tickerContent {
+    display: flex;
+    padding-right: 5vw;
+    gap: 5vw;
+    font-size: 126px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.firstRow .tickerContent {
+    animation: tickerRight 20s linear infinite;
+    animation-delay: -2s;
+}
+
+.secondRow .tickerContent {
+    animation: tickerLeft 25s linear infinite;
+    animation-delay: -4s;
+}
+
+.thirdRow .tickerContent {
+    animation: tickerRight 15s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes tickerRight {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes tickerLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.noColor {
+    font-size: 126px;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 1px #444444;
+}
+
+.colorFirstRow {
+    color: #2FDBBC;
+}
+
+.colorSecondRow {
+    color: #A64CED;
+}
+
+.colorThirdRow {
+    color: #FFAA4C;
+}
+
+.tickerSmall {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 2vw;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tickerSmallWrapper {
+    display: flex;
+    width: max-content;
+    animation: tickerSmallAnim 10s linear infinite;
+}
+
+.tickerSmallContent {
+    display: flex;
+    gap: 4vw;
+    min-width: 100%;
+}
+
+
+@keyframes tickerSmallAnim {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .tickerSmall {
+        font-size: 3vw;
+    }
+    .tickerSmallContent {
+        gap: 6vw;
+        animation-duration: 12s;
+    }
+}
+
+@media (max-width: 480px) {
+    .tickerSmall {
+        font-size: 4vw;
+    }
+    .tickerSmallContent {
+        gap: 8vw;
+        animation-duration: 15s;
+    }
+}
+
+
+
+
